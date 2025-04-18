@@ -23,7 +23,7 @@ public class Kata3 {
         worker.interrupt();
     }
 
-    static class SleepingTask implements Runnable{
+    private static class SleepingTask implements Runnable{
         @Override
         public void run() {
             System.out.println("Thread started - going to sleep for 10 seconds");

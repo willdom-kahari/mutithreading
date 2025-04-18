@@ -13,15 +13,17 @@ public class Kata1 {
             t1.start();
         }
     }
-}
 
-class NumberPrinter implements Runnable{
+    private static class NumberPrinter implements Runnable{
 
 
-    @Override
-    public void run() {
-        for (int i = 1; i < 101; i++) {
-            System.out.println(Thread.currentThread().getName() + " - " + i);
+        @Override
+        public void run() {
+            for (int i = 1; i < 101; i++) {
+                System.out.println(Thread.currentThread().getName() + " - " + i);
+            }
         }
     }
 }
+
+

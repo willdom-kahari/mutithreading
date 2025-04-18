@@ -7,20 +7,22 @@ package month1.kata;
  */
 public class Kata2 {
     public static void main(String[] args) throws InterruptedException {
-        Thread first = new Thread(new NumbersPrinter(), "First thread");
-        Thread second = new Thread(new NumbersPrinter(), "Second thread");
+        Thread first = new Thread(new NumberPrinter(), "First thread");
+        Thread second = new Thread(new NumberPrinter(), "Second thread");
         first.start();
         first.join();
         second.start();
     }
-}
 
-class NumbersPrinter implements Runnable{
+    private static class NumberPrinter implements Runnable{
 
-    @Override
-    public void run() {
-        for (int i = 0; i < 100; i++) {
-            System.out.println(Thread.currentThread().getName() + ": counter = " + (i + 1));
+        @Override
+        public void run() {
+            for (int i = 0; i < 100; i++) {
+                System.out.println(Thread.currentThread().getName() + ": counter = " + (i + 1));
+            }
         }
     }
 }
+
+
