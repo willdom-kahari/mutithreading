@@ -1,4 +1,4 @@
-package month1.starting_a_thread;
+package month1.examples;
 
 
 import java.util.logging.Logger;
@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 /**
  * @author <a href="mailto:developer.wadu@gmail.com">Willdom Kahari</a>
  */
-public class Main {
+public class StartingAThread {
     public static void main(String[] args) {
         Thread myThread = new MyThread("extending-thread");
         Thread myRunnable = new Thread(new MyRunnable(), "runnable-thread");
