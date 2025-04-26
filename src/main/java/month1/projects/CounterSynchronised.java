@@ -22,13 +22,18 @@ public class CounterSynchronised {
 
     private static class Counter {
         private int val;
+        private final Object lock = new Object();
 
-        synchronized void increment() {
-            val++;
+        void increment() {
+            synchronized (lock){
+                val++;
+            }
         }
 
-        public int getVal() {
-            return val;
+        int getVal() {
+            synchronized (lock){
+                return val;
+            }
         }
     }
 
